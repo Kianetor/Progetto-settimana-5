@@ -282,19 +282,22 @@ a {
   }
 
   .services-container {
+    display: flex;
+    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px;
   }
 
+
   .services-container .card {
-    flex: 1 1 calc(50% - 12px);
+    flex: 0 0 48%;
   }
 
   .services-container .card:nth-child(3) {
-    flex: 1 1 100%;
-    /* Occupa l'intera larghezza */
+    flex: 0 0 100%;
   }
+
 
 
   .footer-container {
@@ -341,13 +344,8 @@ a {
     font-size: 16px;
   }
 
- 
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-
+ .services-grid .card,
   .services-grid .card:nth-child(3) {
-    grid-column: span 1;
+    flex: 0 0 30%;
   }
 }
