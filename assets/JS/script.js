@@ -9,11 +9,11 @@ const hero = document.querySelector('.hero');
 
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 100) {
-    header.classList.add('scrollato');
-    hero.classList.add('scrollatoHero');
-  } else {
-    header.classList.remove('scrollato');
-    hero.classList.remove('scrollatoHero');
-  }
+    if (window.scrollY > 100) {
+        header.classList.add('scrollato');
+        hero.classList.add('scrollatoHero');
+    } else {
+        header.classList.remove('scrollato');
+        hero.classList.remove('scrollatoHero');
+    }
 });
