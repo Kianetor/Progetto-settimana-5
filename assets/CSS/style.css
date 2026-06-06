@@ -41,6 +41,8 @@ a {
 
 /* HEADER */
 
+
+
 #site-header {
   padding: 10px 0;
   background-color: #ffffff;
@@ -51,6 +53,7 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  padding: 12px 12px;
 }
 
 .logo {
@@ -65,9 +68,21 @@ a {
 .nav-menu {
   display: flex;
   color: #555555;
-  gap: 40px;
+  gap: 20px;
   font-size: 13px;
   font-weight: 500;
+  align-items: center;
+}
+
+.nav-menu a {
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+.nav-menu a:hover {
+  color: #1F7A4D;
+  background-color: #def4e9;
+  border-radius: 4px;
 }
 
 
@@ -82,6 +97,19 @@ a {
 
 .hero-container {
   max-width: 550px;
+  animation: avvioHero 1.5s ease-out forwards;
+}
+
+@keyframes avvioHero {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero h1 {
@@ -234,9 +262,11 @@ a {
 /* VISUALIZZAZIONE TABLET 768PX A SALIRE */
 
 @media (min-width: 768px) {
+
   .container {
     margin: 0 auto;
-    max-width: 750px;
+    max-width: 100%;
+
   }
 
 
@@ -245,9 +275,12 @@ a {
     justify-content: space-between;
   }
 
+  .nav-menu a {
+    font-size: 16px;
+  }
 
   .hero {
-    padding: 120px 0;
+    padding: 100px 0;
   }
 
   .hero h1 {
@@ -255,8 +288,8 @@ a {
   }
 
   .hero p {
-    font-size: 18px;
-    max-width: 78%;
+    font-size: 25px;
+    max-width: 80%;
     margin: 0 auto;
 
   }
@@ -326,14 +359,15 @@ a {
   }
 }
 
+/* VISUALIZZAZIONE DESKTOP 992PX A SALIRE */
+
 @media (min-width: 992px) {
   .container {
-    max-width: 960px;
+    max-width: 1140px;
   }
 
-  
   .hero {
-    padding: 160px 0;
+    padding: 100px 0;
   }
 
   .hero h1 {
@@ -342,10 +376,58 @@ a {
 
   .hero p {
     font-size: 16px;
+    max-width: 50%;
+    margin: 0 auto;
   }
 
- .services-grid .card,
-  .services-grid .card:nth-child(3) {
-    flex: 0 0 30%;
+  .services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
   }
+
+  .services-container .card,
+  .services-container .card:nth-child(3) {
+    flex: 0 0 32.5%;
+  }
+
+
+  .nav-menu a {
+    font-size: 18px;
+  }
+
+}
+
+
+
+#site-header.scrollato {
+  background-color: #1f1e1e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 5px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: padding 0.3s ease; 
+}
+
+
+#site-header.scrollato .nav-menu a {
+  color: #ffffff; 
+}
+
+
+#site-header.scrollato .logo {
+  color: white;
+}
+
+
+#site-header.scrollato .nav-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1); 
+  color: #47b77f;
+}
+
+.scrollatoHero {
+  margin-top: 80px;
 }
